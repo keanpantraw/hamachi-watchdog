@@ -1,0 +1,13 @@
+[Unit]
+Description=Logmein hamachi watchdog
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/hamachi-watchdog/hamachi-watchdog.py
+TimeoutStartSec=20s
+
+[Install]
+WantedBy=default.target
