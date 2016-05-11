@@ -22,6 +22,7 @@ if __name__ == '__main__':
     copy("hamachi-watchdog.conf", config_dir, mode=0o644)
     copy("hamachi-watchdog.service", systemd_dir, mode=0o644)
     copy("hamachi-watchdog.timer", systemd_dir, mode=0o644)
+    copy("autorestartable-hamachi.service", systemd_dir, mode=0o644)
 
     os.system("systemctl daemon-reload")
     os.system("systemctl enable hamachi-watchdog.service")

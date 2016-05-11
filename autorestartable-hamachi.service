@@ -1,0 +1,11 @@
+[Unit]
+Description=LogMeIn Hamachi VPN tunneling engine which restarts automatically
+After=network.target
+
+[Service]
+ExecStart=/opt/logmein-hamachi/bin/hamachid
+Type=forking
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
